@@ -17,13 +17,13 @@ public class PokemonController {
 
     private final PokemonService pokemonService;
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public BaseResponse addData(@RequestBody AddDataPokemonRequest request, BindingResult bindingResult){
         return  pokemonService.addData(request);
     }
 
-    @GetMapping(value = "pokemon/get/{pokemon_name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get/{pokemon_name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public BaseResponse pokemonGet(@PathVariable String pokemon_name, BindingResult bindingResult){
         return pokemonService.testPokemonGet(pokemon_name);
     }
