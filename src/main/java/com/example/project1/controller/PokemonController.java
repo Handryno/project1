@@ -19,12 +19,12 @@ public class PokemonController {
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public BaseResponse addData(@RequestBody AddDataPokemonRequest request, BindingResult bindingResult){
+    public BaseResponse addData(@RequestBody AddDataPokemonRequest request){
         return  pokemonService.addData(request);
     }
 
     @GetMapping(value = "/get/{pokemon_name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public BaseResponse pokemonGet(@PathVariable String pokemon_name, BindingResult bindingResult){
+    public BaseResponse pokemonGet(@PathVariable String pokemon_name){
         return pokemonService.testPokemonGet(pokemon_name);
     }
 

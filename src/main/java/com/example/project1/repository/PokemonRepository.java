@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PokemonRepository extends MongoRepository<Pokemon, String> {
-    default Pokemon findByPokemon_name(String pokemon_name) {
+    static Pokemon findByPokemon_name(String pokemon_name){
         return null;
     }
 }
