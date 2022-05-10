@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.annotation.PostConstruct;
 
 
-@FeignClient(name = "switching-client",url = "https://pokeapi.co/api/v2/pokemon")
+@FeignClient(name = "switching-client",url = "https://pokeapi.co/api/v2/pokemon", configuration = PokemonConfiguration.class)
 public interface PokemonClient {
-//    @PostConstruct
     @GetMapping(value="/{pokemon_name}", consumes = MediaType.APPLICATION_JSON_VALUE)
     LinkedTreeMap getDataByGet(@PathVariable String pokemon_name);
 

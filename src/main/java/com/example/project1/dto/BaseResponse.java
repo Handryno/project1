@@ -7,3 +7,4 @@ public class BaseResponse {
     private String status;
     private Object data;
 }
+
