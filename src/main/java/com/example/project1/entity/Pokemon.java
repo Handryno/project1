@@ -9,8 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Pokemon {
     @Id
     private Long id;
-    private String pokemon_name;
-    private String base_exp;
+    private String name;
+    private String base_experience;
     private String height;
     private String weight;
 }
