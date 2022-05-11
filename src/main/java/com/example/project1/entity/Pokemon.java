@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Document(collection = "Pokemon")
 public class Pokemon {
+
     @Id
     private Long id;
     private String name;

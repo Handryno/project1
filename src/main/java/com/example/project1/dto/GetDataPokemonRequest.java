@@ -5,6 +5,5 @@ import lombok.Data;
 
 @Data
 public class GetDataPokemonRequest {
-    @JsonProperty("name")
     private String name;
 }
