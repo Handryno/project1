@@ -1,14 +1,9 @@
 package com.example.project1.controller;
 
-import com.example.project1.config.PokemonClient;
-import com.example.project1.dto.AddDataPokemonRequest;
-import com.example.project1.dto.BaseResponse;
-import com.example.project1.dto.GetDataPokemonRequest;
+import com.example.project1.dto.*;
 import com.example.project1.service.PokemonService;
-import com.google.gson.internal.LinkedTreeMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +29,18 @@ public class PokemonController {
     @GetMapping(value = "/get/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public BaseResponse pokemonGet(@PathVariable String name){
         return pokemonService.testPokemonGet(name);
+    }
+
+    @PostMapping(value = "/cek-kuat", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public BaseResponse cekSiapaKuatPokemon(@RequestBody CekRequestKuat request){
+        return pokemonService.cekSiapaKuat(request);
+    }
+
+    @PostMapping(value = "/cek-lemah", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public BaseResponse cekSiapaLemah(@RequestBody CekRequestLemah request){
+        return pokemonService.cekSiapaLemah(request);
     }
 
 }

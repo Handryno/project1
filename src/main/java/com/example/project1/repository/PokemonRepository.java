@@ -2,6 +2,8 @@ package com.example.project1.repository;
 
 import com.example.project1.entity.Pokemon;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -9,5 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface PokemonRepository extends MongoRepository<Pokemon, String> {
      Pokemon findPokemonByName(String name);
 
-     Pokemon findPokemonByNameOrNameAndType(String name1, String name2, int type);
+
+
 }
