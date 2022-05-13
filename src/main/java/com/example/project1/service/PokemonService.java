@@ -162,9 +162,9 @@ public class PokemonService {
         log.info("Start Service testPokemonGet");
         GetDataPokemonApi response = pokemonClient.getDataByGet(name);
 
-//        if (response == null){
-//            return ResponseUtil.setResponse("Success", response);
-//        }
+        if (response == null){
+            return ResponseUtil.setResponse("Failed", response);
+        }
         return ResponseUtil.setResponse("Success", response);
     }
 }
