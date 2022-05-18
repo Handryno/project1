@@ -5,6 +5,7 @@ import com.example.project1.service.PokemonService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -18,28 +19,28 @@ public class PokemonController {
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public BaseResponse addData(@RequestBody AddDataPokemonRequest request){
+    public BaseResponse addData(@RequestBody AddDataPokemonRequest request) throws Exception{
         return  pokemonService.addData(request);
     }
     @PostMapping(value = "/find", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public BaseResponse getData(@RequestBody GetDataPokemonRequest request){
+    public BaseResponse getData(@RequestBody GetDataPokemonRequest request) throws Exception{
         return pokemonService.getDataByName(request);
     }
     @GetMapping(value = "/get/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public BaseResponse pokemonGet(@PathVariable String name){
+    public BaseResponse pokemonGet(@PathVariable String name) throws Exception{
         return pokemonService.testPokemonGet(name);
     }
 
     @PostMapping(value = "/cek-kuat", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public BaseResponse cekSiapaKuatPokemon(@RequestBody CekRequestKuat request){
+    public BaseResponse cekSiapaKuatPokemon(@RequestBody CekRequestKuat request) throws Exception{
         return pokemonService.cekSiapaKuat(request);
     }
 
     @PostMapping(value = "/cek-lemah", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public BaseResponse cekSiapaLemah(@RequestBody CekRequestLemah request){
+    public BaseResponse cekSiapaLemah(@RequestBody CekRequestLemah request) throws Exception{
         return pokemonService.cekSiapaLemah(request);
     }
 
