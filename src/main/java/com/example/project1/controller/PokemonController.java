@@ -22,15 +22,16 @@ public class PokemonController {
 
 
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public BaseResponse addData(@RequestBody AddDataPokemonRequest request){
-        return  pokemonService.addData(request);
-    }
-    @PostMapping(value = "/find", produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public BaseResponse getData(@RequestBody GetDataPokemonRequest request){
-        return pokemonService.getDataByName(request);
-    }
+//    @ResponseBody
+//    public BaseResponse addData(@RequestBody AddDataPokemonRequest request){
+//        return  pokemonService.addData(request);
+//    }
+//    @PostMapping(value = "/find", produces = MediaType.APPLICATION_JSON_VALUE)
+//    @ResponseBody
+//    public BaseResponse getData(@RequestBody GetDataPokemonRequest request){
+//        return pokemonService.getDataByName(request);
+//    }
+
     @GetMapping(value = "/get/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
     public BaseResponse pokemonGet(@PathVariable String name){
         return pokemonService.testPokemonGet(name);
